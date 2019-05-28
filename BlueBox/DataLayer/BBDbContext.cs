@@ -16,7 +16,7 @@ namespace BlueBox.DataLayer
         {
         }
 
-        public DbSet<Customer> Cusomters { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Identity> Identities { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Payment> Payments { get; set; }

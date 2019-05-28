@@ -18,5 +18,7 @@
   <ItemGroup>
     <Folder Include="DataLayer\" />
     <Folder Include="DataLayer\Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

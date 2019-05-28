@@ -28,7 +28,7 @@ namespace BlueBox.Controllers
 
         // GET: api/movies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movie>> GetTodoItem(int id)
+        public async Task<ActionResult<Movie>> GetMovie(int id)
         {
             var movie = await _context.Movies.FindAsync(id);
 
@@ -41,7 +41,7 @@ namespace BlueBox.Controllers
         }
         // POST: api/movies - Add new movie to catalog, only usable by admin
         [HttpPost]
-        public async Task<ActionResult<Movie>> PostTodoItem(Movie item)
+        public async Task<ActionResult<Movie>> PostMovie(Movie item)
         {
             _context.Movies.Add(item);
             await _context.SaveChangesAsync();
