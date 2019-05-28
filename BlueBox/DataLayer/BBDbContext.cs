@@ -11,11 +11,16 @@ namespace BlueBox.DataLayer
 {
     public class BBDbContext : DbContext
     {
-        DbSet<Customer> Cusomters { get; set; }
-        DbSet<Identity> Identities { get; set; }
-        DbSet<Movie> Movies { get; set; }
-        DbSet<Payment> Payments { get; set; }
-        DbSet<Shipping> Shipments { get; set; }
+        public BBDbContext(DbContextOptions<BBDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Customer> Cusomters { get; set; }
+        public DbSet<Identity> Identities { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+        public DbSet<Shipping> Shipments { get; set; }
 
     }
 }
