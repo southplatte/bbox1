@@ -9,7 +9,7 @@ namespace BlueBox.DataLayer.Models
 {
     public class Payment
     {
-
+        public int Id { get; set; }
     }
 
 }

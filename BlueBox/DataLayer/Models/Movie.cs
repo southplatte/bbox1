@@ -14,7 +14,7 @@ namespace BlueBox.DataLayer.Models
         public string Synopsis { get; set; }
         public string Description { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public string StudioName { get; set; }
+        public string Studio { get; set; }
        
     }
 

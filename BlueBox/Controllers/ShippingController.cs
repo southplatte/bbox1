@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlueBox.Controllers
 {
-    [Route("api/[shipping]")]
+    [Route("api/shipping")]
     public class ShippingController : Controller
     {
         // GET: api/values

@@ -17,8 +17,8 @@ using System.Security.Claims;
 
 namespace BlueBox.Controllers
 {
-    [Authorize]
-    [Route("api/[customer]")]
+    //[Authorize]
+    [Route("api/customer")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
@@ -90,27 +90,25 @@ namespace BlueBox.Controllers
         }
         // POST: api/customers - Add new customer to catalog, only usable by admin
         [HttpPost]
-        public async Task<ActionResult<Customer>> PostCustomer(Customer item)
+        public ActionResult<Customer> PostCustomer(Customer customer)
         {
-            _context.Customers.Add(item);
-            await _context.SaveChangesAsync();
+            _customerService.Create(customer, customer.Password);
 
-            return CreatedAtAction(nameof(Getcustomers), new { id = item.FirstName }, item);
+            return CreatedAtAction(nameof(Getcustomers), new { id = customer.FirstName }, customer);
         }
 
         // DELETE: api/customers/5 - delete customer from catalog, only usable by admin
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Deletecustomer(long id)
+        public IActionResult Deletecustomer(int id)
         {
-            var customer = await _context.Customers.FindAsync(id);
+            var customer = _customerService.GetById(id);
 
             if (customer == null)
             {
                 return NotFound();
             }
 
-            _context.Customers.Remove(customer);
-            await _context.SaveChangesAsync();
+            _customerService.Delete(id);
 
             return NoContent();
         }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlueBox.Controllers
 {
-    [Route("api/[movies]")]
+    [Route("api/movies")]
     [ApiController]
     public class MovieController : ControllerBase
     {
@@ -51,7 +51,7 @@ namespace BlueBox.Controllers
 
         // DELETE: api/movies/5 - delete movie from catalog, only usable by admin
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMovie(long id)
+        public async Task<IActionResult> DeleteMovie(int id)
         {
             var movie = await _context.Movies.FindAsync(id);
 
